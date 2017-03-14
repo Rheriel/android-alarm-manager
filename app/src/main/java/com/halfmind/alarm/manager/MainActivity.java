@@ -1,31 +1,43 @@
 package com.halfmind.alarm.manager;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.ads.mediation.admob.AdMobAdapter;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 public class MainActivity extends AppCompatActivity {
+
+    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        // Initializing AdMob
+        MobileAds.initialize(getApplicationContext(), "ca-app-pub-9753397971027272~5599296347");
+
+        mAdView = (AdView) findViewById(R.id.ad_view);
+
+        Bundle extras = new Bundle();
+        extras.putBoolean("is_designed_for_families", true);
+
+        // For testing purposes only. Remove for Production.
+        AdRequest adRequest = new AdRequest.Builder()
+                .addNetworkExtrasBundle(AdMobAdapter.class, extras)
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .build();
+
+        // Uncomment for Production.
+        // AdRquest adRequest = new AdRequest.Builder()
+            // .addNetworkExtrasBundle(AdMobAdapter.class, extras)
+            // .build();
+        mAdView.loadAd(adRequest);
     }
 
     @Override

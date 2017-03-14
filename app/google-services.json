@@ -1,0 +1,50 @@
+{
+  "project_info": {
+    "project_number": "136249831814",
+    "firebase_url": "https://go-alarm.firebaseio.com",
+    "project_id": "go-alarm",
+    "storage_bucket": "go-alarm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:136249831814:android:8475a44eb1a3698f",
+        "android_client_info": {
+          "package_name": "com.halfmind.alarm.manager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "136249831814-i7voha8leano10re8envrqib3gt0jrm4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.halfmind.alarm.manager",
+            "certificate_hash": "cecd3753a9632b7b9743c94eae847edff4bd9434"
+          }
+        },
+        {
+          "client_id": "136249831814-a7q4l3ohkp8kv313odpjmkkf9le76r0q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFGh8JQeMu3fk2TjWItOOqH4gKmFaX-BE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
